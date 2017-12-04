@@ -1,0 +1,10 @@
+{
+	"author": "Diego Najar, Marek Rost",
+	"email": "marek.rost@gmail.com",
+	"website": "https://github.com/marekrost/echo",
+	"version": "1.0",
+	"releaseDate": "2017-12-03",
+	"license": "GPLv3",
+	"compatible": "2.0",
+	"notes": "Bludit version of original Echo theme for Nibbleblog4 by Diego Najar"
+}
