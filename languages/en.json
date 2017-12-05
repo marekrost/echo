@@ -1,7 +1,7 @@
 {
-	"theme-data":
-	{
-		"name": "Kernel Panic",
-		"description": "Just a simple and clean theme for microsites or microblogs. Full support to cover images."
-	}
+  "theme-data":
+  {
+    "name": "Echo",
+    "description": "Bludit version of original Echo theme for Nibbleblog by Diego Najar."
+  }
 }
