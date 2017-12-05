@@ -31,10 +31,6 @@ table th {
   padding-left: 5px;
 }
 
-h1,
-h2 {
-  font-weight: bold;
-}
 /* PAGES */
 
 article.page {
@@ -132,7 +128,11 @@ div.plugin-pages ul.child {
 
 /*----------------ORIGINAL CSS IMPORT---------------*/
 
-html{
+body{
+  font:15px 'Roboto', Arial, sans-serif;
+  font-weight:300;
+  line-height:1.625em;
+  color:#596270;
   background:#e4e7ec;
   background:-moz-linear-gradient(left, #e4e7ec 24em, #ffffff 24em);
   background:-webkit-gradient(linear, left top, right top, color-stop(24em,#e4e7ec), color-stop(24em,#ffffff));
@@ -140,16 +140,10 @@ html{
   background:-o-linear-gradient(left, #e4e7ec 24em,#ffffff 24em);
   background:-ms-linear-gradient(left, #e4e7ec 24em,#ffffff 24em);
   background:linear-gradient(to right, #e4e7ec 24em,#ffffff 24em);
-  color:#596270;
-}
-body{
-  font:100% 'Roboto', Arial, sans-serif;
-  font-weight:300;
-  line-height:1.625em;
 }
 h1,h2,h3,h4{
   font-weight:300;
-  color:#586374
+  color:#586374;
 }
 header h1{
   font-size:2em;
@@ -157,11 +151,6 @@ header h1{
 }
 .post-title{
   font-weight:400;
-}
-.plugin_box h3{
-  font-size:1.2em;
-  font-weight:400;
-  text-transform:uppercase;
 }
 a{
   color:#3466B1;
@@ -238,7 +227,6 @@ footer a{
   clear:both;
 }
 header{
-  position:relative;
   text-align:center;
   margin-bottom:2em;
 }
@@ -247,16 +235,7 @@ header img{
 }
 .content{
   background:#fff;
-  width:40em;
-  max-width:40em;
-  float:right;
   padding:2em 2em 0;
-}
-aside,header{
-  width:20em;
-  float:left;
-  padding:2em 1em 0;
-  clear:left;
 }
 .pager{
   position:relative;
