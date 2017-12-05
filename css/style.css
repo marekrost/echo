@@ -51,6 +51,9 @@ table th {
 }
 
 /* PAGES */
+article.page {
+  margin-bottom: 80px;
+}
 
 article.page header {
   margin-bottom: 20px;
@@ -161,6 +164,9 @@ div.plugin-pages ul.child {
   font-size:90%;
   color:#A6AEB7;
   padding:3em 1em;
+}
+
+#site-content {
   background: #fff;
 }
 
@@ -224,16 +230,7 @@ header a:hover{
 footer a{
   font-weight:400;
 }
-.main{
-  max-width:64em;/*1024px*/
-}
-.main:after,.pager:after{
-  content:"";
-  display:table;
-  clear:both;
-}
 .content {
-  background:#fff;
   padding:2em 2em 0;
 }
 .pager{
