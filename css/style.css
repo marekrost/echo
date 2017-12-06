@@ -50,8 +50,8 @@ table th {
   padding-left: 5px;
 }
 
-/* PAGES */
 article.page {
+  position: relative;
   margin-bottom: 80px;
 }
 
@@ -244,8 +244,8 @@ footer a{
 }
 .publish-date{
   position: absolute;
-  top: 3em;
-  left: -3.2em;
+  top: -1.3em;
+  left: -6.3em;
   max-width: 8em;
   background: #fff;
   padding: .2em .5em;
