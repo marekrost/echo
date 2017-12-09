@@ -10,7 +10,9 @@
     <div class="row">
       <div id="site-sidebar" class="col-md-4 col-lg-3">
         <header id="site-header">
-          <h1 class="intro-lead"><a class="home-title" href="<?php echo $Site->url(); ?>"><?php echo $Site->title(); ?></a></h1>
+          <a class="home-title" href="<?php echo $Site->url(); ?>">
+            <h1 class="intro-lead"><?php echo $Site->title(); ?></h1>
+          </a>
           <p class=""><?php echo $Site->description(); ?></p>
         </header>
         <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
