@@ -13,7 +13,8 @@
           <a class="home-title" href="<?php echo $Site->url(); ?>">
             <h1 class="intro-lead"><?php echo $Site->title(); ?></h1>
           </a>
-          <p class=""><?php echo $Site->description(); ?></p>
+          <p class="slogan"><?php echo $Site->slogan(); ?></p>
+          <p class="description"><?php echo $Site->description(); ?></p>
         </header>
         <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
       </div>

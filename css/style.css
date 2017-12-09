@@ -14,9 +14,21 @@ body {
   background:linear-gradient(to right, #e4e7ec 10% ,#ffffff 75%);
 }
 
+a {
+  color: #3466B1;
+  text-decoration: none;
+  outline: none;
+}
+
+a:active, a:focus, a:hover {
+  color: #3458a2;
+  text-decoration: none;
+  outline: none;
+}
+
 h1, h2, h3, h4 {
-  font-weight:300;
   color:#727F94;
+  font-weight:300;
 }
 
 img {
@@ -90,7 +102,9 @@ div.plugin > h5 {
 
 div.plugin h2.plugin-label {
   color: #586374;
-  font-size: 1.5em;
+  font-size: 1.1em;
+  font-stretch: condensed;
+  font-weight: 400;
   text-transform: uppercase;
   margin: 20px 0 10px;
 }
@@ -115,6 +129,14 @@ div.plugin-pages li.parent h3 {
 
 div.plugin-pages ul.child {
   margin-left: 5px;
+}
+
+div.plugin-tags ul {
+  list-style-type: none;
+}
+
+div.plugin-tags li {
+  display: inline;
 }
 
 .video-embed {
