@@ -16,7 +16,9 @@
           <p class="slogan"><?php echo $Site->slogan(); ?></p>
           <p class="description"><?php echo $Site->description(); ?></p>
         </header>
-        <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
+        <nav class="navbar navbar-default navbar-fixed-side">
+          <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
+        </nav>
       </div>
       <div id="site-content" class="col-md-8">
         <?php

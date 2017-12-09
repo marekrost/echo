@@ -21,7 +21,7 @@ a {
 }
 
 a:active, a:focus, a:hover {
-  color: #3458a2;
+  color: #343da2;
   text-decoration: none;
   outline: none;
 }
@@ -72,7 +72,8 @@ article.page header a:hover {
 }
 
 article.page header h2 {
-  font-size: 2.4em;
+  font-size: 2em;
+  font-weight: 400;
 }
 
 article.page footer {
@@ -136,7 +137,8 @@ div.plugin-tags ul {
 }
 
 div.plugin-tags li {
-  display: inline;
+  display: inline-block;
+  padding: 0px 5px;
 }
 
 .video-embed {
@@ -186,7 +188,6 @@ div.plugin-tags li {
 
 .publish-date{
   position: absolute;
-  top: -1.3em;
   left: -6.2em;
   max-width: 8em;
   background: #fff;
