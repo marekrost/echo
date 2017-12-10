@@ -12,7 +12,7 @@
   echo Theme::fontAwesome();
 
   echo '<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic,greek,vietnamese" rel="stylesheet">';
-  echo Theme::css('css/bootstrap-3.3.7/css/bootstrap-3.3.7.min.css');
+  echo Theme::css('css/bootstrap-3.3.7/css/bootstrap.min.css');
   echo Theme::css('css/style.css');
 
   // Load plugins with the hook siteHead
