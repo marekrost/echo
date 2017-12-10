@@ -1,5 +1,19 @@
 @charset "UTF-8";
 
+.navbar-default, .navbar-default .navbar-collapse {
+  border: none;
+  background: none;
+}
+
+.navbar-toggle {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
 body {
   font: 16px 'Roboto', Arial, sans-serif;
   font-weight:300;
@@ -158,6 +172,7 @@ div.plugin-tags li {
 #site-header {
   text-align:center;
   margin-bottom:2em;
+  float: none;
 }
 
 #site-header h1 {
@@ -174,8 +189,10 @@ div.plugin-tags li {
   padding:3em 1em;
 }
 
-#site-sidebar {
-  padding-right: 4em;
+@media (min-width: 992px) {
+  #site-sidebar {
+    padding-right: 4em;
+  }
 }
 
 #site-content {
