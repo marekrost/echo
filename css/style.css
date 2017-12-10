@@ -14,6 +14,16 @@
   margin-bottom: 0px;
 }
 
+.navbar-brand {
+  height: auto;
+}
+
+@media (min-width: 992px) {
+  .navbar-brand {
+    float: none;
+  }
+}
+
 body {
   font: 16px 'Roboto', Arial, sans-serif;
   font-weight:300;
@@ -171,7 +181,6 @@ div.plugin-tags li {
 
 #site-header {
   text-align:center;
-  margin-bottom:2em;
   float: none;
 }
 

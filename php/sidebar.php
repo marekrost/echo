@@ -9,8 +9,8 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="<?php echo $Site->url(); ?>"><h1 class="intro-lead"><?php echo $Site->title(); ?></h1></a>
+              <p class="slogan hidden-xs hidden-sm"><?php echo $Site->slogan(); ?></p>
             </div>
-            <p class="slogan hidden-xs hidden-sm"><?php echo $Site->slogan(); ?></p>
             <p class="description hidden-xs hidden-sm"><?php echo $Site->description(); ?></p>
           </header>
           <div class="collapse navbar-collapse">
