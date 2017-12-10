@@ -1,1 +1,19 @@
-<?php Theme::plugins('siteSidebar') ?>
+
+        <nav class="navbar navbar-default navbar-fixed-side">
+          <div class="container">
+            <header id="site-header" class="navbar-header">
+              <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="<?php echo $Site->url(); ?>"><h1 class="intro-lead"><?php echo $Site->title(); ?></h1></a>
+              <p class="slogan hidden-xs"><?php echo $Site->slogan(); ?></p>
+              <p class="description hidden-xs"><?php echo $Site->description(); ?></p>
+            </header>
+            <div class="collapse navbar-collapse">
+              <?php Theme::plugins('siteSidebar') ?>
+            </div>
+          </div>
+        </nav>

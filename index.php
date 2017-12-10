@@ -9,16 +9,7 @@
   <div class="container-fluid">
     <div class="row">
       <div id="site-sidebar" class="col-md-4 col-lg-3">
-        <header id="site-header">
-          <a class="home-title" href="<?php echo $Site->url(); ?>">
-            <h1 class="intro-lead"><?php echo $Site->title(); ?></h1>
-          </a>
-          <p class="slogan"><?php echo $Site->slogan(); ?></p>
-          <p class="description"><?php echo $Site->description(); ?></p>
-        </header>
-        <nav class="navbar navbar-default navbar-fixed-side">
-          <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
-        </nav>
+        <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
       </div>
       <div id="site-content" class="col-md-8">
         <?php
