@@ -12,7 +12,7 @@
   echo Theme::fontAwesome();
 
   echo '<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic,greek,vietnamese" rel="stylesheet">';
-  echo '<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">';
+  echo Theme::css('css/bootstrap-3.3.7/css/bootstrap-3.3.7.min.css');
   echo Theme::css('css/style.css');
 
   // Load plugins with the hook siteHead
