@@ -11,7 +11,7 @@
 }
 
 .navbar {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .navbar-brand {
@@ -21,6 +21,11 @@
 @media (min-width: 992px) {
   .navbar-brand {
     float: none;
+    display: block;
+    padding-bottom: 0;
+  }
+  .navbar-brand h1 {
+    margin-bottom: 0;
   }
 }
 
