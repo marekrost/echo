@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
-.navbar-default, .navbar-default .navbar-collapse {
-  border: none;
-  background: none;
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  height: auto;
 }
 
 .navbar-toggle {
@@ -10,12 +13,21 @@
   margin-bottom: 0;
 }
 
-.navbar {
-  margin-bottom: 0;
+.navbar-default, .navbar-default .navbar-collapse {
+  border: none;
+  background: none;
 }
 
-.navbar-brand {
-  height: auto;
+.navbar-default .navbar-toggle {
+  background: #727f94;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background: #8493ab;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
 }
 
 @media (min-width: 992px) {
@@ -35,12 +47,6 @@ body {
   line-height:1.625em;
   color:#596270;
   background:#e4e7ec;
-  background:-moz-linear-gradient(left, #e4e7ec 10%, #ffffff 75%);
-  background:-webkit-gradient(linear, left top, right top, color-stop(10%,#e4e7ec), color-stop(75%,#ffffff));
-  background:-webkit-linear-gradient(left, #e4e7ec 10%,#ffffff 75%);
-  background:-o-linear-gradient(left, #e4e7ec 10%,#ffffff 75%);
-  background:-ms-linear-gradient(left, #e4e7ec 10%,#ffffff 75%);
-  background:linear-gradient(to right, #e4e7ec 10% ,#ffffff 75%);
 }
 
 a {
@@ -49,15 +55,22 @@ a {
   outline: none;
 }
 
-a:active, a:focus, a:hover {
+a:focus, a:hover {
   color: #343da2;
   text-decoration: none;
   outline: none;
 }
 
 h1, h2, h3, h4 {
-  color:#727F94;
+  color: #727f94;
   font-weight:300;
+}
+
+a h1:hover, a h1:focus,
+a h2:hover, a h2:focus,
+a h3:hover, a h3:focus,
+a h4:hover, a h4:focus {
+  color: #8493ab;
 }
 
 img {
@@ -79,7 +92,7 @@ table {
 
 table thead {
   background: #555555;
-  color: #FFF;
+  color: #fff;
 }
 
 table td,
@@ -217,23 +230,26 @@ div.plugin-tags li {
   padding:2em 2em 0;
 }
 
-.publish-date{
-  position: absolute;
-  left: -6.2em;
-  max-width: 8em;
-  background: #fff;
-  padding: .2em .5em;
-}
+@media (min-width: 992px) {
+  .publish-date{
+    position: absolute;
+    left: -6.1em;
+    top: 0;
+    max-width: 8em;
+    background: #fff;
+    padding: .2em .5em;
+  }
 
-.month,.day,.year{
-  display:block;
-  text-align:center;
-}
+  .month,.day,.year{
+    display: block;
+    text-align: center;
+  }
 
-.month,.day {
-  font-weight:700;
-}
+  .month,.day {
+    font-weight:700;
+  }
 
-.day{
-  font-size:2em;
+  .day{
+    font-size:2em;
+  }
 }

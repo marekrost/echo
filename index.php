@@ -11,7 +11,7 @@
       <div id="site-sidebar" class="col-md-4 col-lg-3">
         <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
       </div>
-      <div id="site-content" class="col-md-8">
+      <div id="site-content" class="col-md-8 col-lg-9">
         <?php
           if ($WHERE_AM_I=='page') {
             include(THEME_DIR_PHP.'page.php');
@@ -30,10 +30,12 @@
     </div>
   </div>
 
-  <?php Theme::plugins('siteBodyEnd'); ?>
+  <?php
+    Theme::plugins('siteBodyEnd');
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    echo Theme::js('js/jquery-3.2.1/jquery.min.js');
+    echo Theme::js('css/bootstrap-3.3.7/js/bootstrap.min.js');
+  ?>
 
 </body>
 </html>
