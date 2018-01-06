@@ -11,4 +11,4 @@ Bludit and Bootstrap 3 version of original Echo theme for Nibbleblog by Diego Na
 - Marek Rost
 
 ## Screenshot
-![screenshot-editorial](https://raw.githubusercontent.com/marekrost/echo/master/screenshot.jpg)
+![screenshot-editorial](https://raw.githubusercontent.com/marekrost/echo/master/screenshot.png)
