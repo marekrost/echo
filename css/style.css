@@ -253,3 +253,11 @@ div.plugin-tags li {
     font-size:2em;
   }
 }
+
+.css-truncate, a, code {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
