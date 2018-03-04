@@ -260,4 +260,5 @@ div.plugin-tags li {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  vertical-align: top;
 }
