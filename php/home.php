@@ -11,10 +11,9 @@
         <img src="<?php echo $page->coverImage() ?>" alt="<?php echo $page->slug() ?>">
       <?php } ?>
       <div class="publish-date">
-        <?php $published = strtotime($page->date()); ?>
-        <span class="month"><?php echo strftime("%b", $published); ?></span>
-        <span class="day"><?php echo strftime("%d", $published); ?></span>
-        <span class="year"><?php echo strftime("%Y", $published); ?></span>
+        <span class="month"><?php echo $page->dateRaw("M"); ?></span>
+        <span class="day"><?php echo $page->dateRaw("d"); ?></span>
+        <span class="year"><?php echo $page->dateRaw("Y"); ?></span>
       </div>
     </header>
     <?php echo $page->contentBreak() ?>
