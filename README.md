@@ -3,7 +3,7 @@
 Bludit and Bootstrap 3 version of original Echo theme for Nibbleblog by Diego Najar.
 
 ## Compatible
-- Bludit v2.0.x, v2.1.x
+- Bludit v2.0.x - v2.3.x
 
 ## Author
 - Diego Najar
