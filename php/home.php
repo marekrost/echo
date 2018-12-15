@@ -1,8 +1,17 @@
-<!-- Section -->
-<section class="content">
-  <?php foreach ($pages as $page): ?>
+<?php if (empty($content)): ?>
+  <div class="mt-4">
+  <?php $language->p('No pages found') ?>
+  </div>
+<?php endif ?>
+<?php foreach ($content as $page): ?>
+
+  <!-- Post -->
   <article class="page">
-    <?php Theme::plugins('pageBegin') ?>
+
+    <!-- Load Bludit Plugins: Page Begin -->
+    <?php Theme::plugins('pageBegin'); ?>
+
+    <!-- Post header -->
     <header>
       <a href="<?php echo $page->permalink() ?>">
         <h2><?php echo $page->title() ?></h2>
@@ -11,12 +20,21 @@
         <img src="<?php echo $page->coverImage() ?>" alt="<?php echo $page->slug() ?>">
       <?php } ?>
       <div class="publish-date">
-        <span class="month"><?php echo $page->dateRaw("M"); ?></span>
-        <span class="day"><?php echo $page->dateRaw("d"); ?></span>
-        <span class="year"><?php echo $page->dateRaw("Y"); ?></span>
+        <span class="month"><?php echo $page->date("M"); ?></span>
+        <span class="day"><?php echo $page->date("d"); ?></span>
+        <span class="year"><?php echo $page->date("Y"); ?></span>
       </div>
     </header>
-    <?php echo $page->contentBreak() ?>
+
+    <!-- Post body -->
+    <?php echo $page->contentBreak(); ?>
+
+    <!-- "Read more" button -->
+    <?php if ($page->readMore()): ?>
+    <a href="<?php echo $page->permalink(); ?>"><?php echo $L->get('Read more'); ?></a>
+    <?php endif ?>
+
+    <!-- Post footer -->
     <footer>
       <?php if ($page->readMore() ) { ?>
         <div class="readmore">
@@ -26,19 +44,37 @@
         </div>
       <?php } ?>
     </footer>
-    <?php Theme::plugins('pageEnd') ?>
+
+    <!-- Load Bludit Plugins: Page End -->
+    <?php Theme::plugins('pageEnd'); ?>
+
   </article>
-  <?php endforeach ?>
-</section>
+<?php endforeach ?>
 
 <!-- Pagination -->
-<ul class="pagination">
-<?php
-if (Paginator::showPrev()) {
-        echo '<li><a href="'.Paginator::prevPageUrl().'">'.$L->get('Previous page').'</a></li>';
-}
-if (Paginator::showNext()) {
-        echo '<li><a href="'.Paginator::nextPageUrl().'" class="float-right">'.$L->get('Next page').'</a></li>';
-}
-?>
-</ul>
+<?php if (Paginator::numberOfPages()>1): ?>
+<nav class="paginator">
+  <ul class="pagination flex-wrap">
+
+    <!-- Previous button -->
+    <?php if (Paginator::showPrev()): ?>
+    <li class="page-item mr-2">
+      <a class="page-link" href="<?php echo Paginator::previousPageUrl() ?>" tabindex="-1">&#8592; <?php echo $L->get('Previous'); ?></a>
+    </li>
+    <?php endif ?>
+
+    <!-- Home button -->
+    <li class="page-item <?php if (Paginator::currentPage()==1) echo 'disabled' ?>">
+      <a class="page-link" href="<?php echo Theme::siteUrl() ?>">Home</a>
+    </li>
+
+    <!-- Next button -->
+    <?php if (Paginator::showNext()): ?>
+    <li class="page-item ml-2">
+      <a class="page-link" href="<?php echo Paginator::nextPageUrl() ?>"><?php echo $L->get('Next'); ?> &#8594;</a>
+    </li>
+    <?php endif ?>
+
+  </ul>
+</nav>
+<?php endif ?>

@@ -1,41 +1,51 @@
 <!DOCTYPE html>
-<html lang="<?php echo $Site->language(); ?>">
+<html lang="<?php echo Theme::lang() ?>">
 <head>
   <?php include(THEME_DIR_PHP.'head.php'); ?>
 </head>
 <body>
-  <?php Theme::plugins('siteBodyBegin') ?>
 
+  <!-- Load Bludit Plugins: Site Body Begin -->
+  <?php Theme::plugins('siteBodyBegin'); ?>
+
+  <!-- Content -->
   <div class="container-fluid">
     <div class="row">
-      <div id="site-sidebar" class="col-md-4 col-lg-3">
+
+      <!-- Left Sidebar -->
+      <div id="site-sidebar" class="col-md-4 col-lg-3 pr-md-4">
         <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
       </div>
-      <div id="site-content" class="col-md-8 col-lg-9">
-        <?php
-          if ($WHERE_AM_I=='page') {
-            include(THEME_DIR_PHP.'page.php');
-          } else {
-            include(THEME_DIR_PHP.'home.php');
-          }
-        ?>
-        <footer id="site-footer">
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1 text-center">
-              <p><?php echo $Site->footer(); ?><br>Powered by <a href="https://www.bludit.com" target="_blank">BLUDIT</a></p>
-            </div>
-          </div>
-        </footer>
+
+      <!-- Blog Posts -->
+      <div id="site-content" class="col-md-8 col-lg-9 px-5 pt-4">
+      <?php
+        if ($WHERE_AM_I == 'page') {
+          include(THEME_DIR_PHP.'page.php');
+        } else {
+          include(THEME_DIR_PHP.'home.php');
+        }
+      ?>
+
+      <!-- Footer -->
+      <?php include(THEME_DIR_PHP.'footer.php'); ?>
+
       </div>
+
     </div>
   </div>
 
+  <!-- Javascript -->
   <?php
-    Theme::plugins('siteBodyEnd');
+    // Include Jquery file from Bludit Core
+    echo Theme::jquery();
 
-    echo Theme::js('js/jquery-3.2.1/jquery.min.js');
-    echo Theme::js('css/bootstrap-3.3.7/js/bootstrap.min.js');
+    // Include javascript Bootstrap file from Bludit Core
+    echo Theme::jsBootstrap();
   ?>
+
+  <!-- Load Bludit Plugins: Site Body End -->
+  <?php Theme::plugins('siteBodyEnd'); ?>
 
 </body>
 </html>

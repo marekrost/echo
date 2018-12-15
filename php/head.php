@@ -1,20 +1,21 @@
-<?php
-  echo Theme::charset('utf-8');
-  echo Theme::viewport('width=device-width, initial-scale=1');
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Bludit CMS">
 
-  echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">';
+<!-- Dynamic title tag -->
+<?php echo Theme::metaTags('title'); ?>
 
-  echo Theme::headTitle();
-  echo Theme::headDescription();
+<!-- Dynamic description tag -->
+<?php echo Theme::metaTags('description'); ?>
 
-  echo Theme::favicon('img/favicon.png');
+<!-- Include Favicon -->
+<?php echo Theme::favicon('img/favicon.png'); ?>
 
-  echo Theme::fontAwesome();
+<!-- Include Bootstrap CSS file bootstrap.css -->
+<?php echo Theme::cssBootstrap(); ?>
 
-  echo '<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic,greek,vietnamese" rel="stylesheet">';
-  echo Theme::css('css/bootstrap-3.3.7/css/bootstrap.min.css');
-  echo Theme::css('css/style.css');
+<!-- Include CSS Styles from this theme -->
+<?php echo Theme::css('css/style.css'); ?>
 
-  // Load plugins with the hook siteHead
-  Theme::plugins('siteHead');
-?>
+<!-- Load Bludit Plugins: Site head -->
+<?php Theme::plugins('siteHead'); ?>
