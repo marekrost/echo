@@ -5,7 +5,7 @@ body {
   font-weight:300;
   line-height:1.625em;
   color:#596270;
-  background:#e4e7ec;
+  background:#fff;
 }
 
 a {
@@ -56,11 +56,22 @@ table th {
   padding-left: 5px;
 }
 
+#site-sidebar {
+  background: #e4e7ec;
+}
 #site-footer {
   color:#a6aeb7;
 }
-#site-content {
-  background: #fff;
+@media (max-width: 767px) {
+  #site-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+  #site-content {
+    margin-top: 80px;
+  }
 }
 
 .navbar-brand {

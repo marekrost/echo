@@ -13,7 +13,7 @@
     <div class="row">
 
       <!-- Left Sidebar -->
-      <div id="site-sidebar" class="col-md-4 col-lg-3 pr-md-4">
+      <div id="site-sidebar" class="col-md-4 col-lg-3 pr-lg-5">
         <?php include(THEME_DIR_PHP.'sidebar.php'); ?>
       </div>
 
