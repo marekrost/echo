@@ -1,8 +1,49 @@
+<?php
+
+// Nette - Latte str length function
+function strLength(string $s): int {
+  return function_exists('mb_strlen')
+      ? mb_strlen($s, 'UTF-8')
+      : strlen(utf8_decode($s));
+}
+
+// Nette - Latte substring function
+
+function substring($s, int $start, int $length = null): string {
+  $s = (string) $s;
+  if ($length === null) {
+    $length = strLength($s);
+  }
+  if (function_exists('mb_substr')) {
+    return mb_substr($s, $start, $length, 'UTF-8');
+  }
+  return iconv_substr($s, $start, $length, 'UTF-8');
+}
+
+// Nette - Latte truncate filter function
+function truncate($s, int $length, string $append = "\u{2026}"): string {
+  $s = (string) $s;
+  if (strLength($s) > $length) {
+    $length -= strLength($append);
+    if ($length < 1) {
+      return $append;
+    } elseif (preg_match('#^.{1,' . $length . '}(?=[\s\x00-/:-@\[-`{-~])#us', $s, $matches)) {
+      return $matches[0] . $append;
+    } else {
+      return substring($s, 0, $length) . $append;
+    }
+  }
+  return $s;
+}
+
+?>
+
 <?php if (empty($content)): ?>
   <div class="mt-4">
   <?php $language->p('No pages found') ?>
   </div>
 <?php endif ?>
+
 <?php foreach ($content as $page): ?>
 
   <!-- Post -->
@@ -16,33 +57,33 @@
       <a href="<?php echo $page->permalink() ?>">
         <h2><?php echo $page->title() ?></h2>
       </a>
-      <?php if( $page->coverImage() ) { ?>
+      <?php if( $page->coverImage()): ?>
         <img src="<?php echo $page->coverImage() ?>" alt="<?php echo $page->slug() ?>">
-      <?php } ?>
+      <?php endif ?>
       <div class="publish-date">
-        <span class="month"><?php echo $page->date("M"); ?></span>
+        <span class="month"><?php echo mb_substr($page->date("M"), 0, 3); ?></span>
         <span class="day"><?php echo $page->date("d"); ?></span>
         <span class="year"><?php echo $page->date("Y"); ?></span>
       </div>
     </header>
-
+    
     <!-- Post body -->
-    <?php echo $page->contentBreak(); ?>
-
-    <!-- "Read more" button -->
-    <?php if ($page->readMore()): ?>
-    <a href="<?php echo $page->permalink(); ?>"><?php echo $L->get('Read more'); ?></a>
-    <?php endif ?>
+    <?php
+      if ($page->readMore() || $WHERE_AM_I === 'home') {
+        echo $page->contentBreak();
+      } else {
+        $page_content = 
+            Text::removeLineBreaks(
+                    Text::removeHTMLTags($page->content()));
+        echo truncate($page_content, 400);
+      }
+    ?>
 
     <!-- Post footer -->
-    <footer>
-      <?php if ($page->readMore() ) { ?>
-        <div class="readmore">
-          <a href="<?php echo $page->permalink() ?>">
-            <i class="icon-arrow-down"></i> <?php echo $Language->get('Read more') ?>
-          </a>
-        </div>
-      <?php } ?>
+    <footer class="mt-3">
+      <a class="btn btn-primary" href="<?php echo $page->permalink(); ?>">
+        <?php echo $L->get('Read more'); ?> &raquo;
+      </a>
     </footer>
 
     <!-- Load Bludit Plugins: Page End -->
@@ -52,29 +93,8 @@
 <?php endforeach ?>
 
 <!-- Pagination -->
-<?php if (Paginator::numberOfPages()>1): ?>
-<nav class="paginator">
-  <ul class="pagination flex-wrap">
-
-    <!-- Previous button -->
-    <?php if (Paginator::showPrev()): ?>
-    <li class="page-item mr-2">
-      <a class="page-link" href="<?php echo Paginator::previousPageUrl() ?>" tabindex="-1">&#8592; <?php echo $L->get('Previous'); ?></a>
-    </li>
-    <?php endif ?>
-
-    <!-- Home button -->
-    <li class="page-item <?php if (Paginator::currentPage()==1) echo 'disabled' ?>">
-      <a class="page-link" href="<?php echo Theme::siteUrl() ?>">Home</a>
-    </li>
-
-    <!-- Next button -->
-    <?php if (Paginator::showNext()): ?>
-    <li class="page-item ml-2">
-      <a class="page-link" href="<?php echo Paginator::nextPageUrl() ?>"><?php echo $L->get('Next'); ?> &#8594;</a>
-    </li>
-    <?php endif ?>
-
-  </ul>
-</nav>
-<?php endif ?>
+<?php 
+  if (Paginator::numberOfPages()>1) {
+    echo Paginator::bootstrap_html(false,false,true);
+  }
+?>

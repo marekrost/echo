@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 body {
-  font: 16px 'Roboto', Arial, sans-serif;
+  font: 1.1rem 'Roboto', Arial, sans-serif;
   font-weight:300;
   line-height:1.625em;
   color:#596270;
@@ -14,21 +16,65 @@ a {
   outline: none;
 }
 
-a:focus, a:hover {
+a:active, a:focus, a:hover {
   color: #343da2;
   text-decoration: none;
   outline: none;
 }
 
-h1, h2, h3, h4 {
-  color: #727f94;
-  font-weight:300;
+h1, .h1 {
+  font-size: 2rem;
+  font-weight: 400;
 }
 
-a h1:hover, a h1:focus,
-a h2:hover, a h2:focus,
-a h3:hover, a h3:focus,
-a h4:hover, a h4:focus {
+h2, .h2 {
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+h3, .h3 {
+  font-size: 1.5rem;
+}
+
+h4, .h4 {
+  font-size: 1.25rem;
+}
+
+h5, .h5 {
+  font-size: 1rem;
+}
+
+h6, .h6 {
+  font-size: 0.9rem;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h1, h1 a, .h1, .h1 a,
+h2, h2 a, .h2, .h2 a,
+h3, h3 a, .h3, .h3 a,
+h4, h4 a, .h4, .h4 a,
+h5, h5 a, .h5, .h5 a,
+h6, h6 a, .h6, .h6 a {
+  color: #727f94;
+}
+
+h1 a:active, h1 a:focus, h1 a:hover
+h2 a:active, h2 a:focus, h2 a:hover
+h3 a:active, h3 a:focus, h3 a:hover
+h4 a:active, h4 a:focus, h4 a:hover {
   color: #8493ab;
 }
 
@@ -75,13 +121,12 @@ table th {
 }
 
 .navbar-brand {
-  margin-right: 0;
-}
-.navbar-brand h1,
-.navbar-brand h2 {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #727f94;
   margin: 0;
+}
+.navbar-brand a {
+  color: #727f94;
 }
 .navbar-toggler {
   font-size: 1.0rem;
@@ -100,28 +145,55 @@ article.page {
   position: relative;
   margin-bottom: 80px;
 }
-article.page header {
-  margin-bottom: 20px;
-}
-article.page header a:hover {
-  text-decoration: none;
-}
-article.page header h1,
-article.page header h2 {
+
+article header h1,
+article header h2 {
   font-size: 2em;
   font-weight: 400;
-}
-article.page footer {
-  text-align: right;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
 }
 
+article header a:active,
+article header a:focus,
+article header a:hover {
+  text-decoration: none;
+}
+
+.btn-default,
 .page-item .page-link {
   background: #757e8e;
   color: #fff;
 }
+
+.btn-default:active,
+.btn-default:focus,
+.btn-default:hover,
+.page-item .page-link:active,
+.page-item .page-link:focus,
+.page-item .page-link:hover {
+  background-color: #858e9e;
+  border-color: #fff;
+}
+
 .page-item.disabled .page-link {
   background: #757e8e;
   color: #aaa;
+}
+.btn-primary,
+.page-item.active .page-link {
+  background-color: #58606f;
+  border-color: #dee2e6;
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
+.page-item.active .page-link:active,
+.page-item.active .page-link:focus,
+.page-item.active .page-link:hover {
+  background-color: #68707f !important;
+  border-color: #eef2b6 !important;
 }
 
 div.plugin:not(:last-child) {
@@ -170,7 +242,7 @@ div.plugin-tags li {
 @media (min-width: 992px) {
   .publish-date{
     position: absolute;
-    left: -6.1em;
+    left: -6em;
     top: 0;
     max-width: 8em;
     background: #fff;
@@ -193,11 +265,18 @@ div.plugin-tags li {
   }
 }
 
-.css-truncate, code {
+.css-truncate {
   display: inline-block;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  vertical-align: top;
+}
+
+code {
+  display: inline-block;
+  max-width: 100%;
+  overflow: auto;
   vertical-align: top;
 }

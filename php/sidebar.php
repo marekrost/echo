@@ -1,14 +1,23 @@
 <nav>
   <div class="row mr-lg-0">
     <div class="col-8 col-md-12 text-md-center mt-3 mb-3 mt-md-5">
-      <img src="<?php echo DOMAIN_THEME_IMG.'profile-icon.png'; ?>" alt="<?php echo $site->title() ?>" width="150" class="mb-4 mx-auto d-none d-md-block" />
-      <a class="navbar-brand" href="<?php echo Theme::siteUrl() ?>">
-        <?php if ($WHERE_AM_I == 'page'): ?>
-          <h2><?php echo $site->title() ?></h2>
-        <?php else: ?>
-          <h1><?php echo $site->title() ?></h1>
-        <?php endif ?>
-      </a>
+    
+      <!-- Site logo -->
+      <img src="<?php echo empty($site->logo()) ? (DOMAIN_THEME_IMG . 'profile-icon.png') : $site->logo(); ?>" alt="<?php echo $site->title() ?>" width="150" class="mb-4 mx-auto d-none d-md-block" />
+      
+      <!-- Site title -->
+      <?php if ($WHERE_AM_I !== 'home'): ?>
+        <h2 class="navbar-brand">
+      <?php else: ?>
+        <h1 class="navbar-brand">
+      <?php endif ?>
+        <a href="<?php echo Theme::siteUrl() ?>"><?php echo $site->title() ?></a>
+      <?php if ($WHERE_AM_I !== 'home'): ?>
+        </h2>
+      <?php else: ?>
+        </h1>
+      <?php endif ?>
+
       <p class="d-none d-md-block"><?php echo $site->slogan(); ?></p>
       <p class="d-none d-md-block"><?php echo $site->description(); ?></p>
     </div>
